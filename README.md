@@ -49,26 +49,6 @@ This website acts as an online résumé highlighting education, professional abi
 
 ---
 
-## Project Structure
-
-nxtsukii.github.io/
-├── index.html
-├── cv.html
-├── education.html
-├── skills.html
-├── hobbies.html
-├── services.html
-├── contact.html
-├── style.css
-├── script.js
-├── LICENSE
-└── assets/
-├── images/
-├── icons/
-└── other media files
-
----
-
 ## How to Run Locally
 
 1. Clone the repository:
@@ -80,7 +60,9 @@ cd nxtsukii.github.io
 
 3. Launch index.html in your preferred browser.
 
-Credits
+---
+
+**Credits**
 
 Author: Long Bao (Nxtsukii)
 
@@ -92,12 +74,15 @@ Development Tools: Visual Studio Code, GitHub Pages
 
 Images: Owned or sourced from open-license/free-use platforms
 
-License
+---
 
-This project is licensed under the MIT License
-.
+**License**
 
-Contact
+This project is licensed under the MIT License.
+
+---
+
+***Contact**
 
 GitHub: @nxtsukii
 
