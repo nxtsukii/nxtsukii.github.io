@@ -261,26 +261,6 @@ span{
     }
 }
 
-@media (max-width: 995px){
-    .home{
-        flex-direction: column;
-        margin: 5rem 4rem;
-    }
-
-    .home .home-content h3{
-        font-size: 2.5rem;
-    }
-
-    .home-content h1{
-        font-size: 5rem;
-    }
-
-    .home-img img{
-        width: 70vw;
-        margin-top: 4rem;
-    }
-}
-
 /* Nav bar styling */
 .nav-container {
     width: 100%;
@@ -739,4 +719,301 @@ footer .text span a:hover{
     text-align: justify;
     color: white;
     font-size: 15px;
+}
+
+/* Form */
+.form-section {
+  text-align: center;
+  color: white;
+  padding: 50px 0;
+}
+
+.form-section h2 {
+  font-size: 28px;
+  color: #ffb3b3;
+  text-shadow: 0 0 10px #ff6666;
+  border-bottom: 2px solid #ff6666;
+  display: inline-block;
+  margin-bottom: 30px;
+  padding-bottom: 5px;
+}
+
+form {
+  width: 70%;
+  margin: 0 auto;
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: left;
+}
+
+fieldset {
+  border: 2px solid #b35050;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  padding: 20px;
+}
+
+legend {
+  color: #ff9999;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+input, select, textarea {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #333;
+  color: white;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 5px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  width: 48%;
+  padding: 10px;
+  margin-top: 15px;
+  font-size: 16px;
+  background-color: #b35050;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: #ff6666;
+}
+
+.error {
+  color: #ff8080;
+  font-size: 13px;
+}
+
+/* Hobbies page */
+.hobbies-container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.hobbies-container h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 25px;
+    position: relative;
+    text-shadow: 0 0 10px #ff8080, 0 0 20px #b74b4b;
+}
+
+.hobbies-container h2::after,
+.hobbies-container h2::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 3px;
+    background-color: #b74b4b;
+    border-radius: 2px;
+}
+
+.hobbies-container h2::after {
+    width: 180px;
+}
+
+.hobbies-container h2::before {
+    width: 120px;
+    bottom: -16px;
+    opacity: 0.8;
+}
+
+/* Reading */
+.reading-section {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.book-carousel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.book-carousel:active {
+    cursor: grabbing;
+}
+
+.book-item {
+    flex: 0 1 180px;
+    text-align: center;
+}
+
+.book-item img {
+    width: 100%;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.book-item img:hover {
+    transform: scale(1.05);
+}
+
+.book-item p {
+    margin-top: 8px;
+    font-size: 0.95rem;
+    color: white;
+}
+
+.book-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Gaming */
+.gaming-section {
+    text-align: center;
+}
+
+.game-list {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.game-btn {
+    background-color: #b74b4b;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.game-btn:hover {
+    background-color: #ff6666;
+}
+
+.game-video iframe {
+    width: 80%;
+    height: 400px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255, 77, 77, 0.4);
+}
+
+/* Responsive section */
+@media (max-width: 995px){
+    .home{
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+
+    .home .home-content h3{
+        font-size: 2.5rem;
+    }
+
+    .home-content h1{
+        font-size: 5rem;
+    }
+
+    .home-img img{
+        width: 70vw;
+        margin-top: 4rem;
+    }
+}
+
+@media (max-width: 1000px){
+    .about .about-details{
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .about .about-details .left{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .about-details .right{
+        width: 90%;
+        margin: 40px 0;
+    }
+
+    .services .boxes .box{
+        margin: 20px 0;
+        width: calc(100% / 2 - 20px);
+    }
+}
+
+@media (max-width: 900px) {
+    .about .left img{
+        height: 350px;
+        width: 350px;
+    }
+}
+
+@media (max-width: 968px) {
+    .skills .skills-details{
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .skills-details .text{
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .skills-details .boxes{
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .services .boxes .box{
+        margin: 20px 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .skills-details .boxes .per{
+        font-size: 50px;
+        color: #b74b4b;
+    }
+}
+
+@media (max-width: 768px) {
+    .book-item {
+        width: 140px;
+    }
+
+    .game-video iframe {
+        width: 100%;
+        height: 250px;
+    }
 }

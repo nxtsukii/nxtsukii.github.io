@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Contact page</title>
@@ -17,7 +18,7 @@
                 <a href="services.html"> Sevices</a>
                 <a href="skills.html"> Skills</a>
                 <a href="education.html"> Education</a>
-                <a href="#"> Hobbies</a>
+                <a href="hobbies.html"> Hobbies</a>
                 <a href="contact.html" class="active"> Contact</a>
             </nav>
         </header>
@@ -55,6 +56,118 @@
             
         </div>
     </section>
+
+    <section class="form-section">
+        <h2>Or send me a message</h2>
+        <form id="contactForm" novalidate>
+            <fieldset>
+                <legend>Personal Information</legend>
+
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" required pattern="^[A-Za-z ]+$">
+                <span class="error" id="nameError"></span>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error" id="emailError"></span>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required pattern="^[0-9]{10,11}$">
+                <span class="error" id="phoneError"></span>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="10" max="120" step="1" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Other Details</legend>
+
+                <label for="date">Preferred Contact Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="satisfaction">Satisfaction (1–10):</label>
+                <input type="range" id="satisfaction" name="satisfaction" min="1" max="10">
+
+                <label for="favcolor">Favorite Color:</label>
+                <input type="color" id="favcolor" name="favcolor">
+
+                <label for="resume">Upload File:</label>
+                <input type="file" id="resume" name="resume">
+
+                <label>Contact Preference:</label>
+                <input type="radio" name="contact" value="email" required> Email
+                <input type="radio" name="contact" value="phone"> Phone
+
+                <label>Subscribe:</label>
+                <input type="checkbox" name="subscribe"> Subscribe to newsletter
+
+                <label for="country">Country:</label>
+                <select id="country" name="country" required>
+                    <optgroup label="Asia">
+                        <option value="vn">Vietnam</option>
+                        <option value="jp">Japan</option>
+                    </optgroup>
+                    <optgroup label="Europe">
+                        <option value="uk">United Kingdom</option>
+                        <option value="fr">France</option>
+                    </optgroup>
+                </select>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <label for="browsers">Favorite Browser:</label>
+                <input list="browsers" name="browser" id="browser">
+                <datalist id="browsers">
+                    <option value="Chrome">
+                    <option value="Firefox">
+                    <option value="Edge">
+                    <option value="Safari">
+                </datalist>
+
+                <input type="hidden" name="hiddenField" value="hiddenValue">
+
+                <div class="buttons">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </div>
+            </fieldset>
+        </form>
+    </section>
+
+    <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+        let valid = true;
+
+        const name = document.getElementById("fullname");
+        const email = document.getElementById("email");
+        const phone = document.getElementById("phone");
+        const password = document.getElementById("password");
+
+        // Reset all errors
+        document.querySelectorAll(".error").forEach(e => e.textContent = "");
+
+        if (!name.checkValidity()) {
+            document.getElementById("nameError").textContent = "Please enter a valid name (letters only).";
+            valid = false;
+        }
+
+        if (!email.checkValidity()) {
+            document.getElementById("emailError").textContent = "Please enter a valid email address.";
+            valid = false;
+        }
+
+        if (!phone.checkValidity()) {
+            document.getElementById("phoneError").textContent = "Phone must be 10–11 digits.";
+            valid = false;
+        }
+
+        if (valid) {
+            alert("Submit successful!");
+            this.reset();
+        }
+    });
+    </script>
 
     <footer>
         <div class="text">

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Hobbies page</title>
+</head>
+<body>
+    <div class="nav-container">
+        <header>
+            <a href="index.html" class="logo"><span>Natsuki</span></a>
+
+            <nav>
+                <a href="index.html"> Home</a>
+                <a href="services.html"> Sevices</a>
+                <a href="skills.html"> Skills</a>
+                <a href="education.html"> Education</a>
+                <a href="hobbies.html" class="active"> Hobbies</a>
+                <a href="contact.html"> Contact</a>
+            </nav>
+        </header>
+    </div>
+
+    <main class="hobbies-container">
+        <section class="reading-section">
+            <h2>Reading Books</h2>
+            <div class="book-carousel">
+                <div class="book-item">
+                    <img src="NNA.jpg" alt="Book 1">
+                    <p>Cho tôi xin một vé đi tuổi thơ - Nguyễn Nhật Ánh</p>
+                </div>
+                <div class="book-item">
+                    <img src="TraiHoaVang.jpg" alt="Book 2">
+                    <p>Trại hoa vàng - Nguyễn Nhật Ánh</p>
+                </div>
+                <div class="book-item">
+                    <img src="TROTS.jpg" alt="Book 3">
+                    <p>The rest of the story - Sarah Dessen</p>
+                </div>
+                <div class="book-item">
+                    <img src="ChamYeu.jpg" alt="Book 4">
+                    <p>Chạm Yêu - Sarah Dessen</p>
+                </div>
+                <div class="book-item">
+                    <img src="norwegian_wood.jpg" alt="Book 5">
+                    <p>Norwegian Wood - Haruki Murakami</p>
+                </div>
+                <div class="book-item">
+                    <img src="kafka.jpg" alt="Book 6">
+                    <p>Kafka on the shore- Haruki Murakami</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="gaming-section">
+            <h2>Gaming</h2>
+            <div class="game-list">
+                <button class="game-btn" onclick="showVideo('genshin')">Genshin Impact</button>
+                <button class="game-btn" onclick="showVideo('hsr')">Honkai: Star Rail</button>
+                <button class="game-btn" onclick="showVideo('valorant')">Valorant</button>
+                <button class="game-btn" onclick="showVideo('minecraft')">Minecraft</button>
+            </div>
+
+            <div class="game-video">
+                <iframe id="gameVideoFrame" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="text">
+            <span>Created by
+                <a href="https://github.com/nxtsukii">nxtsukii</a>
+                | &#169; 2025 All Rights Reserved</span>
+        </div>
+    </footer>
+
+    <script>
+        function showVideo(game) {
+            const frame = document.getElementById("gameVideoFrame");
+            if (game === "genshin") {
+                frame.src = "https://www.youtube.com/embed/w50jW_iEXns";
+            } else if (game == "hsr"){
+                frame.src = "https://www.youtube.com/embed/VJ6XyhwuaMc"
+            } else if (game === "valorant") {
+                frame.src = "https://www.youtube.com/embed/jAj_nbWYb7g";
+            } else if (game === "minecraft") {
+                frame.src = "https://www.youtube.com/embed/5qjnDd1rsII";
+            }
+        }
+    </script>
+
+    <script>
+        const bookList = document.querySelector('.book-list');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        bookList.addEventListener('mousedown', e => {
+        isDown = true;
+        bookList.classList.add('active');
+        startX = e.pageX - bookList.offsetLeft;
+        scrollLeft = bookList.scrollLeft;
+    });
+
+    bookList.addEventListener('mouseleave', () => {
+        isDown = false;
+        bookList.classList.remove('active');
+    });
+
+    bookList.addEventListener('mouseup', () => {
+        isDown = false;
+        bookList.classList.remove('active');
+    });
+
+    bookList.addEventListener('mousemove', e => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - bookList.offsetLeft;
+        const walk = (x - startX) * 1.5; // scroll speed multiplier
+        bookList.scrollLeft = scrollLeft - walk;
+    });
+
+    bookList.addEventListener('touchstart', e => {
+        startX = e.touches[0].pageX - bookList.offsetLeft;
+        scrollLeft = bookList.scrollLeft;
+    });
+
+    bookList.addEventListener('touchmove', e => {
+        const x = e.touches[0].pageX - bookList.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        bookList.scrollLeft = scrollLeft - walk;
+    });
+    </script>
+</body>
+</html>
